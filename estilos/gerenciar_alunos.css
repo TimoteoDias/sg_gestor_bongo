@@ -1,0 +1,29 @@
+/* Estilos para a tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilos para as células da tabela */
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para o cabeçalho da tabela */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Estilo para as linhas ímpares */
+tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo para as linhas quando o mouse está sobre elas */
+tr:hover {
+    background-color: #f2f2f2;
+}
