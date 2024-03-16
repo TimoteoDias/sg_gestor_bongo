@@ -1,3 +1,4 @@
+<!-- gerenciar_alunos.php -->
 <?php
 // Inclua a conexão com o banco de dados
 include "../conexao/conexao.php";
@@ -7,8 +8,16 @@ function formatarData($data) {
     return date("d/m/Y", strtotime($data));
 }
 
-// Consulta SQL para selecionar todos os alunos
-$sql = "SELECT * FROM alunos";
+// Definir o termo de pesquisa como vazio por padrão
+$termo_pesquisa = "";
+
+// Verifica se um termo de pesquisa foi enviado
+if(isset($_GET['q'])) {
+    $termo_pesquisa = $_GET['q'];
+}
+
+// Consulta SQL para selecionar os alunos filtrados pelo termo de pesquisa
+$sql = "SELECT * FROM alunos WHERE nome LIKE '%$termo_pesquisa%' OR email LIKE '%$termo_pesquisa%'";
 $resultado = $conn->query($sql);
 
 // Verifica se há erro na consulta
@@ -34,13 +43,11 @@ if (isset($_SESSION['error_message'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciar Alunos - Centro de Formação Gestor Bongo</title>
-    <link rel="stylesheet" href="../estilos/gerenciar_alunos.css
-    ">
+    <title>Resultados da Pesquisa de Alunos - Centro de Formação Gestor Bongo</title>
+    <link rel="stylesheet" href="../estilos/gerenciar_alunos.css">
 </head>
 <body>
-    <h2>Gerenciar Alunos</h2>
-    <a href="../formularios/frm_adicionar_aluno.php">Adicionar Novo Aluno</a>
+    <h2>Resultados da Pesquisa de Alunos</h2>
     <table border="1">
         <tr>
             <th>ID</th>
@@ -63,11 +70,12 @@ if (isset($_SESSION['error_message'])) {
             <td><?php echo formatarData($row["data_matricula"]); ?></td>
             <td>
                 <a href="editar_aluno.php?id=<?php echo $row["id"]; ?>">Editar</a> |
-                <a href="excluir_aluno.php?id=<?php echo $row["id"]; ?>" onclick="return confirm('Tem certeza que deseja excluir este aluno?')">Excluir</a>
+                <a href="../processos/excluir_aluno.php?id=<?php echo $row["id"]; ?>" onclick="return confirm('Tem certeza que deseja excluir este aluno?')">Excluir</a>
             </td>
         </tr>
         <?php } ?>
     </table>
+    <a href="../formularios/frm_adicionar_aluno.php">Adicionar Novo Aluno</a>
 </body>
 </html>
 
