@@ -49,6 +49,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Aluno</title>
+    <link rel="stylesheet" href="../estilos/editar_aluno.css">
 </head>
 <body>
     <h2>Editar Aluno</h2>
@@ -70,7 +71,10 @@ $conn->close();
         <input type="text" id="endereco" name="endereco" value="<?php echo $aluno['endereco']; ?>"><br>
         <label for="data_nascimento">Data de Nascimento:</label><br>
         <input type="date" id="data_nascimento" name="data_nascimento" value="<?php echo $aluno['data_nascimento']; ?>"><br><br>
-        <input type="submit" value="Atualizar">
+        <input type="submit" value="Atualizar"><br>
+        <br> 
+        <a href="../telas/gerenciar_alunos.php">Voltar</a>
+        
     </form>
 </body>
 </html>

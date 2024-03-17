@@ -1,29 +1,87 @@
-/* Estilos para a tabela */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* Estilos para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
 }
 
-/* Estilos para as células da tabela */
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+h1{
+    text-align: center;
 }
 
-/* Estilo para o cabeçalho da tabela */
-th {
-    background-color: #f2f2f2;
+/* Estilos para o cabeçalho */
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos para o formulário de pesquisa */
+form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
     font-weight: bold;
 }
 
-/* Estilo para as linhas ímpares */
-tr:nth-child(odd) {
-    background-color: #f9f9f9;
+input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-/* Estilo para as linhas quando o mouse está sobre elas */
-tr:hover {
+button[type="submit"] {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para a tabela de alunos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tr:nth-child(even) {
     background-color: #f2f2f2;
+}
+
+/* Estilos para os links de ação na tabela */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para o footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
 }
