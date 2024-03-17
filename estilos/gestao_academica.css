@@ -1,0 +1,52 @@
+/* gestao_academica.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333; /* cor padrão do sistema */
+}
+
+.funcionalidades {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.funcionalidades h2 {
+    color: #333; /* cor padrão do sistema */
+}
+
+.funcionalidades ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.funcionalidades li {
+    margin-bottom: 10px;
+}
+
+.funcionalidades a {
+    color: #007bff; /* cor azul para links */
+    text-decoration: none;
+}
+
+.funcionalidades a:hover {
+    text-decoration: underline;
+}
+
+.sobre {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.sobre h2 {
+    color: #333; /* cor padrão do sistema */
+}
+
+.sobre p {
+    color: #666; /* cor cinza para texto informativo */
+}

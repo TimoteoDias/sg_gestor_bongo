@@ -31,6 +31,7 @@ $nome_usuario = $_SESSION["nome_usuario"];
                     <li><a href="gerenciar_alunos.php">Gerenciar Alunos</a></li>
                     <li><a href="gerenciar_cursos.php">Gerenciar Cursos</a></li>
                     <li><a href="gerar_relatorios.php">Gerar Relatórios</a></li>
+                    <a href="../telas/gestao_academica.php">Gestão Acadêmica</a>
                     <li><a href="logout.php">Sair</a></li>
                 </ul>
             </nav>

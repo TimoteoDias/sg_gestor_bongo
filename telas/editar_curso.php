@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Curso - Centro de Formação Gestor Bongo</title>
+    <link rel="stylesheet" href="../estilos/editar_curso.css">
 </head>
 <body>
     <h2>Editar Curso</h2>
@@ -26,7 +27,7 @@
             // Exibir o formulário de edição com os dados do curso
             $curso = $resultado->fetch_assoc();
     ?>
-            <form action="../processos/processar_edicao_curso.php" method="POST">
+            <form action="../processos/processar_aditar_curso.php" method="POST">
                 <input type="hidden" name="curso_id" value="<?php echo $curso['id']; ?>">
                 
                 <label for="titulo">Título do Curso:</label><br>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Novo Curso - Centro de Formação Gestor Bongo</title>
+    <link rel="stylesheet" href="../estilos/frm_adicionar_curso.css">
 </head>
 <body>
     <h2>Adicionar Novo Curso</h2>

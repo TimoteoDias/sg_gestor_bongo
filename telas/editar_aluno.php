@@ -71,7 +71,7 @@ $conn->close();
         <input type="text" id="endereco" name="endereco" value="<?php echo $aluno['endereco']; ?>"><br>
         <label for="data_nascimento">Data de Nascimento:</label><br>
         <input type="date" id="data_nascimento" name="data_nascimento" value="<?php echo $aluno['data_nascimento']; ?>"><br><br>
-        <input type="submit" value="Atualizar"><br>
+        <input type="submit" value="Salvar Alterações"><br>
         <br> 
         <a href="../telas/gerenciar_alunos.php">Voltar</a>
         
