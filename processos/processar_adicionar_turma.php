@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Capturar os dados do formulário
     $nome_turma = $_POST["nome_turma"];
-    $descricao = $_POST["descricao"];
+    $curso_id = $_POST["curso_id"];
     $sala = $_POST["sala"];
     $data_inicio = $_POST["data_inicio"];
     $data_termino = $_POST["data_termino"];
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar os dados (você pode adicionar validações adicionais conforme necessário)
 
     // Inserir os dados da turma no banco de dados
-    $sql = "INSERT INTO turmas (nome_turma, descricao, sala, data_inicio, data_termino) VALUES (?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO turmas (nome_turma, curso_id, sala, data_inicio, data_termino) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssss", $nome_turma, $descricao, $sala, $data_inicio, $data_termino);
 

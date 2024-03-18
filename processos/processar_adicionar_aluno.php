@@ -1,19 +1,19 @@
 <?php
-// processar_cadastro_aluno.php
-
 session_start(); // Inicia a sessão
 
 // Verifica se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Captura os dados do formulário
     $nome = $_POST["nome"];
+    $numero_bilhete_identidade = $_POST["numero_bilhete_identidade"];
     $email = $_POST["email"];
-    $telefone = $_POST["telefone"];
     $endereco = $_POST["endereco"];
-    $data_nascimento = $_POST["data_nascimento"];
+    $numero = $_POST["numero"];
+    $classe = $_POST["classe"];
+    $curso_id = $_POST["curso_id"];
 
     // Validação dos dados (pode ser mais robusta)
-    if (empty($nome) || empty($email) || empty($data_nascimento)) {
+    if (empty($nome) || empty($numero_bilhete_identidade) || empty($email)) {
         $erro = "Por favor, preencha todos os campos obrigatórios.";
     } else {
         // Conexão com o banco de dados
@@ -29,8 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $erro = "Este e-mail já está cadastrado.";
         } else {
             // Inserir novo aluno no banco de dados
-            $stmt = $conn->prepare("INSERT INTO alunos (nome, email, telefone, endereco, data_nascimento) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss", $nome, $email, $telefone, $endereco, $data_nascimento);
+            $stmt = $conn->prepare("INSERT INTO alunos (nome, numero_bilhete_identidade, email, endereco, numero, classe, curso_id) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssssss", $nome, $numero_bilhete_identidade, $email, $endereco, $numero, $classe, $curso_id);
 
             if ($stmt->execute()) {
                 // Cadastro bem-sucedido

@@ -23,11 +23,12 @@
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
+                    <th>Número do Bilhete de Identidade</th>
                     <th>Email</th>
-                    <th>Telefone</th>
                     <th>Endereço</th>
-                    <th>Data de Nascimento</th>
-                    <th>Data de Matrícula</th>
+                    <th>Número</th>
+                    <th>Classe</th>
+                    <th>Curso ID</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -50,7 +51,7 @@
                 }
 
                 // Consulta SQL para selecionar os alunos filtrados pelo termo de pesquisa
-                $sql = "SELECT * FROM alunos WHERE nome LIKE '%$termo_pesquisa%' OR email LIKE '%$termo_pesquisa%'";
+                $sql = "SELECT * FROM Alunos WHERE nome LIKE '%$termo_pesquisa%' OR email LIKE '%$termo_pesquisa%'";
                 $resultado = $conn->query($sql);
 
                 // Verifica se há erro na consulta
@@ -63,11 +64,12 @@
                     <tr>
                         <td><?php echo $row["id"]; ?></td>
                         <td><?php echo $row["nome"]; ?></td>
+                        <td><?php echo $row["numero_bilhete_identidade"]; ?></td>
                         <td><?php echo $row["email"]; ?></td>
-                        <td><?php echo $row["telefone"]; ?></td>
                         <td><?php echo $row["endereco"]; ?></td>
-                        <td><?php echo formatarData($row["data_nascimento"]); ?></td>
-                        <td><?php echo formatarData($row["data_matricula"]); ?></td>
+                        <td><?php echo $row["numero"]; ?></td>
+                        <td><?php echo $row["classe"]; ?></td>
+                        <td><?php echo $row["curso_id"]; ?></td>
                         <td>
                             <a href="editar_aluno.php?id=<?php echo $row["id"]; ?>">Editar</a> |
                             <a href="../processos/excluir_aluno.php?id=<?php echo $row["id"]; ?>" onclick="return confirm('Tem certeza que deseja excluir este aluno?')">Excluir</a>
@@ -75,14 +77,25 @@
                     </tr>
                 <?php } ?>
             </tbody>
-        </table>
+        </table><br>
+        <br>
+        <br>
+<h3><a href="distribuir_alunos_turma.php">Processo de Distribuicao</a><br></h3>
+<br>
+<br>
         <a href="painel.php" class="btn">Voltar Atrás</a>
+        <br>
+        <br>
+
         <?php 
         // Consulta SQL para contar o total de alunos cadastrados
-        $sql_total_alunos = "SELECT COUNT(*) AS total_alunos FROM alunos";
+        $sql_total_alunos = "SELECT COUNT(*) AS total_alunos FROM Alunos";
         $resultado_total_alunos = $conn->query($sql_total_alunos);
         $total_alunos = $resultado_total_alunos->fetch_assoc()['total_alunos'];
         ?>
+
+        
+
         <!-- Exibir o total de alunos cadastrados -->
         <p>Total de Alunos Cadastrados: <?php echo $total_alunos; ?></p>
        

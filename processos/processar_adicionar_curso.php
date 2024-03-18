@@ -8,18 +8,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $titulo = $_POST["titulo"];
     $descricao = $_POST["descricao"];
     $carga_horaria = $_POST["carga_horaria"];
-    $instrutor = $_POST["instrutor"];
-    $sala = $_POST["sala"];
-    $data_inicio = $_POST["data_inicio"];
-    $data_termino = $_POST["data_termino"];
+    $id = $_POST["id"];
 
     // Validar os dados, se necessário
 
     // Inserir o novo curso no banco de dados
-    $sql = "INSERT INTO cursos (titulo, descricao, carga_horaria, instrutor, sala, data_inicio, data_termino) 
-            VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO cursos (id, titulo, descricao, carga_horaria) 
+            VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssss", $titulo, $descricao, $carga_horaria, $instrutor, $sala, $data_inicio, $data_termino);
+    $stmt->bind_param("ssss", $id, $titulo, $descricao, $carga_horaria);
 
     if ($stmt->execute()) {
         // Redirecionar para a página de gerenciamento de cursos com uma mensagem de sucesso

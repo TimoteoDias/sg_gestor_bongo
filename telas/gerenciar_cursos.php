@@ -20,11 +20,7 @@
             <th>ID</th>
             <th>Nome do Curso</th>
             <th>Descrição</th>
-            <th>Carga Horária</th>
-            <th>Instrutor</th>
-            <th>Sala</th>
-            <th>Data de Início</th>
-            <th>Data de Término</th>
+            <th>Carga Horária</th> 
             <th>Ações</th>
         </tr>
         <?php 
@@ -44,10 +40,6 @@
                     <td><?php echo $curso["titulo"]; ?></td>
                     <td><?php echo $curso["descricao"]; ?></td>
                     <td><?php echo $curso["carga_horaria"]; ?></td>
-                    <td><?php echo $curso["instrutor"]; ?></td>
-                    <td><?php echo $curso["sala"]; ?></td>
-                    <td><?php echo $curso["data_inicio"]; ?></td>
-                    <td><?php echo $curso["data_termino"]; ?></td>
                     <td class="actions">
                         <a href="editar_curso.php?id=<?php echo $curso["id"]; ?>">Editar</a>
                         <a href="../processos/excluir_curso.php?id=<?php echo $curso["id"]; ?>" onclick="return confirm('Tem certeza que deseja excluir este curso?')">Excluir</a>
@@ -55,7 +47,7 @@
                 </tr>
             <?php }
         } else {
-            echo "<tr><td colspan='9' class='no-data'>Nenhum curso encontrado.</td></tr>";
+            echo "<tr><td colspan='8' class='no-data'>Nenhum curso encontrado.</td></tr>";
         }
         ?>
     </table>

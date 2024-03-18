@@ -3,7 +3,7 @@
 include "../conexao/conexao.php";
 
 // Consulta SQL para selecionar todas as turmas
-$sql = "SELECT * FROM turmas";
+$sql = "SELECT * FROM Turmas";
 $resultado = $conn->query($sql);
 ?>
 
@@ -18,7 +18,7 @@ $resultado = $conn->query($sql);
 <body>
     <h2>Gestão de Turmas</h2>
 
-    <a href="../formularios/frm_adicionar_turma.php"><h4>Adicionar Turma</h4></a>
+    <a href="../formularios/frm_adicionar_turma.php"><h4>Adicionar Nova Turma</h4></a>
 
     <!-- Lista de turmas existentes -->
     <h3>Turmas Existentes</h3>
@@ -26,7 +26,7 @@ $resultado = $conn->query($sql);
         <tr>
             <th>ID</th>
             <th>Nome da Turma</th>
-            <th>Descrição</th>
+            <th>Curso ID</th>
             <th>Sala</th>
             <th>Data de Início</th>
             <th>Data de Término</th>
@@ -38,7 +38,7 @@ $resultado = $conn->query($sql);
                 <tr>
                     <td><?php echo $turma["id"]; ?></td>
                     <td><?php echo $turma["nome_turma"]; ?></td>
-                    <td><?php echo $turma["descricao"]; ?></td>
+                    <td><?php echo $turma["curso_id"]; ?></td>
                     <td><?php echo $turma["sala"]; ?></td>
                     <td><?php echo $turma["data_inicio"]; ?></td>
                     <td><?php echo $turma["data_termino"]; ?></td>
